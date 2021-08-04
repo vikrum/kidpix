@@ -11,3 +11,4 @@ Just like the original Kid Pix, there's no guide. Have fun!  Most of the tools s
 ![Screen Shot 2021-08-04 at 11 39 33 AM](https://user-images.githubusercontent.com/291215/128236489-32a56b21-17e9-4b4a-b631-a987472127c4.png)
 * A few animations and sounds still need to be filled in.
 * Safari/iOS sounds need pre-loading.
+* Move color selector elsewhere if screen is too small.
