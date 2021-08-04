@@ -1,0 +1,646 @@
+html,
+body {
+    width: 100%;
+    margin: 0px;
+    background-color: #fff;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#container {
+    /*
+  border: solid;
+  border-color: yellow;
+  */
+    width: 100%;
+}
+
+#hcontainer {
+    /*
+  border: solid;
+  border-color: blue;
+    overflow: hidden;
+    white-space: nowrap;
+    */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#colorbar {
+    /*
+  border: solid;
+  border-color: red;
+*/
+    display: block;
+    width: 50px;
+    float: left;
+}
+
+#colorselector {
+    /*
+  border: solid;
+  border-color: red;
+*/
+    width: 55px;
+}
+
+#toolbar {
+    /*
+  border: solid;
+  border-color: red;
+  */
+    display: block;
+    width: 50px;
+    float: left;
+}
+
+.hidden {
+    display: none;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.subtoolbar {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tool {
+    width: 50px;
+    height: 50px;
+    padding: 0px 0px 0px 0px;
+    vertical-align: middle;
+    display: inline-block;
+    -webkit-border-radius: 0px;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+.currentColor {
+    width: 50px;
+    height: 50px;
+    -webkit-border-radius: 0px;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+.color {
+    width: 25px;
+    height: 25px;
+    margin: 0px;
+    -webkit-border-radius: 0px;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+.github {
+    width: 95%;
+}
+
+#paint {
+    position: relative;
+}
+
+#kiddopaint {
+    border: 1px solid #00f;
+    cursor: crosshair;
+}
+
+#tmpCanvas {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+}
+
+#previewCanvas {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+}
+
+#animCanvas {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+}
+
+#bnimCanvas {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+}
+
+h1 {
+    font-size: 3em;
+    margin: 0.5ex;
+}
+
+emj {
+    font-family: 'Apple Color Emoji';
+    font-size: 2em;
+    height: 50px;
+}
+
+.pixelated {
+    image-rendering: pixelated;
+}
+
+.cursor-bucket {
+    cursor: url(/img/cursor-fill-bucket.png) 14 16, auto;
+}
+
+.cursor-guy-smile {
+    cursor: url(/img/cursor-guy-smile.png) 8 8, auto;
+}
+
+.cursor-guy-wow {
+    cursor: url(/img/cursor-guy-wow.png) 8 8, auto;
+}
+
+.cursor-paint-brush {
+    cursor: url(/img/cursor-paint-brush.png) 16 16, auto;
+}
+
+.cursor-pencil {
+    cursor: url(/img/cursor-pencil.png) 7 16, auto;
+}
+
+.cursor-tnt {
+    cursor: url(/img/cursor-tnt-anim.gif) 4 7, auto;
+}
+
+.cursor-none {
+    cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8zwQAAgYBAyKDV6YAAAAASUVORK5CYII=), default;
+}
+
+.cursor-crosshair {
+    cursor: crosshair;
+}
+
+.cursor-lollipop {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🍭</text></svg>") 16 0, auto;
+}
+
+.cursor-pancakes {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🥞</text></svg>") 16 0, auto;
+}
+
+.sprite {
+    object-fit: none;
+    width: 32px;
+    height: 32px;
+}
+
+.sprite-pos-0-0 {
+    object-position: 0px 0px;
+}
+
+.sprite-pos-0-1 {
+    object-position: 0px -32px;
+}
+
+.sprite-pos-0-2 {
+    object-position: 0px -64px;
+}
+
+.sprite-pos-0-3 {
+    object-position: 0px -96px;
+}
+
+.sprite-pos-0-4 {
+    object-position: 0px -128px;
+}
+
+.sprite-pos-0-5 {
+    object-position: 0px -160px;
+}
+
+.sprite-pos-0-6 {
+    object-position: 0px -192px;
+}
+
+.sprite-pos-0-7 {
+    object-position: 0px -224px;
+}
+
+.sprite-pos-1-0 {
+    object-position: -32px 0px;
+}
+
+.sprite-pos-1-1 {
+    object-position: -32px -32px;
+}
+
+.sprite-pos-1-2 {
+    object-position: -32px -64px;
+}
+
+.sprite-pos-1-3 {
+    object-position: -32px -96px;
+}
+
+.sprite-pos-1-4 {
+    object-position: -32px -128px;
+}
+
+.sprite-pos-1-5 {
+    object-position: -32px -160px;
+}
+
+.sprite-pos-1-6 {
+    object-position: -32px -192px;
+}
+
+.sprite-pos-1-7 {
+    object-position: -32px -224px;
+}
+
+.sprite-pos-2-0 {
+    object-position: -64px 0px;
+}
+
+.sprite-pos-2-1 {
+    object-position: -64px -32px;
+}
+
+.sprite-pos-2-2 {
+    object-position: -64px -64px;
+}
+
+.sprite-pos-2-3 {
+    object-position: -64px -96px;
+}
+
+.sprite-pos-2-4 {
+    object-position: -64px -128px;
+}
+
+.sprite-pos-2-5 {
+    object-position: -64px -160px;
+}
+
+.sprite-pos-2-6 {
+    object-position: -64px -192px;
+}
+
+.sprite-pos-2-7 {
+    object-position: -64px -224px;
+}
+
+.sprite-pos-3-0 {
+    object-position: -96px 0px;
+}
+
+.sprite-pos-3-1 {
+    object-position: -96px -32px;
+}
+
+.sprite-pos-3-2 {
+    object-position: -96px -64px;
+}
+
+.sprite-pos-3-3 {
+    object-position: -96px -96px;
+}
+
+.sprite-pos-3-4 {
+    object-position: -96px -128px;
+}
+
+.sprite-pos-3-5 {
+    object-position: -96px -160px;
+}
+
+.sprite-pos-3-6 {
+    object-position: -96px -192px;
+}
+
+.sprite-pos-3-7 {
+    object-position: -96px -224px;
+}
+
+.sprite-pos-4-0 {
+    object-position: -128px 0px;
+}
+
+.sprite-pos-4-1 {
+    object-position: -128px -32px;
+}
+
+.sprite-pos-4-2 {
+    object-position: -128px -64px;
+}
+
+.sprite-pos-4-3 {
+    object-position: -128px -96px;
+}
+
+.sprite-pos-4-4 {
+    object-position: -128px -128px;
+}
+
+.sprite-pos-4-5 {
+    object-position: -128px -160px;
+}
+
+.sprite-pos-4-6 {
+    object-position: -128px -192px;
+}
+
+.sprite-pos-4-7 {
+    object-position: -128px -224px;
+}
+
+.sprite-pos-5-0 {
+    object-position: -160px 0px;
+}
+
+.sprite-pos-5-1 {
+    object-position: -160px -32px;
+}
+
+.sprite-pos-5-2 {
+    object-position: -160px -64px;
+}
+
+.sprite-pos-5-3 {
+    object-position: -160px -96px;
+}
+
+.sprite-pos-5-4 {
+    object-position: -160px -128px;
+}
+
+.sprite-pos-5-5 {
+    object-position: -160px -160px;
+}
+
+.sprite-pos-5-6 {
+    object-position: -160px -192px;
+}
+
+.sprite-pos-5-7 {
+    object-position: -160px -224px;
+}
+
+.sprite-pos-6-0 {
+    object-position: -192px 0px;
+}
+
+.sprite-pos-6-1 {
+    object-position: -192px -32px;
+}
+
+.sprite-pos-6-2 {
+    object-position: -192px -64px;
+}
+
+.sprite-pos-6-3 {
+    object-position: -192px -96px;
+}
+
+.sprite-pos-6-4 {
+    object-position: -192px -128px;
+}
+
+.sprite-pos-6-5 {
+    object-position: -192px -160px;
+}
+
+.sprite-pos-6-6 {
+    object-position: -192px -192px;
+}
+
+.sprite-pos-6-7 {
+    object-position: -192px -224px;
+}
+
+.sprite-pos-7-0 {
+    object-position: -224px 0px;
+}
+
+.sprite-pos-7-1 {
+    object-position: -224px -32px;
+}
+
+.sprite-pos-7-2 {
+    object-position: -224px -64px;
+}
+
+.sprite-pos-7-3 {
+    object-position: -224px -96px;
+}
+
+.sprite-pos-7-4 {
+    object-position: -224px -128px;
+}
+
+.sprite-pos-7-5 {
+    object-position: -224px -160px;
+}
+
+.sprite-pos-7-6 {
+    object-position: -224px -192px;
+}
+
+.sprite-pos-7-7 {
+    object-position: -224px -224px;
+}
+
+.sprite-pos-8-0 {
+    object-position: -256px 0px;
+}
+
+.sprite-pos-8-1 {
+    object-position: -256px -32px;
+}
+
+.sprite-pos-8-2 {
+    object-position: -256px -64px;
+}
+
+.sprite-pos-8-3 {
+    object-position: -256px -96px;
+}
+
+.sprite-pos-8-4 {
+    object-position: -256px -128px;
+}
+
+.sprite-pos-8-5 {
+    object-position: -256px -160px;
+}
+
+.sprite-pos-8-6 {
+    object-position: -256px -192px;
+}
+
+.sprite-pos-8-7 {
+    object-position: -256px -224px;
+}
+
+.sprite-pos-9-0 {
+    object-position: -288px 0px;
+}
+
+.sprite-pos-9-1 {
+    object-position: -288px -32px;
+}
+
+.sprite-pos-9-2 {
+    object-position: -288px -64px;
+}
+
+.sprite-pos-9-3 {
+    object-position: -288px -96px;
+}
+
+.sprite-pos-9-4 {
+    object-position: -288px -128px;
+}
+
+.sprite-pos-9-5 {
+    object-position: -288px -160px;
+}
+
+.sprite-pos-9-6 {
+    object-position: -288px -192px;
+}
+
+.sprite-pos-9-7 {
+    object-position: -288px -224px;
+}
+
+.sprite-pos-10-0 {
+    object-position: -320px 0px;
+}
+
+.sprite-pos-10-1 {
+    object-position: -320px -32px;
+}
+
+.sprite-pos-10-2 {
+    object-position: -320px -64px;
+}
+
+.sprite-pos-10-3 {
+    object-position: -320px -96px;
+}
+
+.sprite-pos-10-4 {
+    object-position: -320px -128px;
+}
+
+.sprite-pos-10-5 {
+    object-position: -320px -160px;
+}
+
+.sprite-pos-10-6 {
+    object-position: -320px -192px;
+}
+
+.sprite-pos-10-7 {
+    object-position: -320px -224px;
+}
+
+.sprite-pos-11-0 {
+    object-position: -352px 0px;
+}
+
+.sprite-pos-11-1 {
+    object-position: -352px -32px;
+}
+
+.sprite-pos-11-2 {
+    object-position: -352px -64px;
+}
+
+.sprite-pos-11-3 {
+    object-position: -352px -96px;
+}
+
+.sprite-pos-11-4 {
+    object-position: -352px -128px;
+}
+
+.sprite-pos-11-5 {
+    object-position: -352px -160px;
+}
+
+.sprite-pos-11-6 {
+    object-position: -352px -192px;
+}
+
+.sprite-pos-11-7 {
+    object-position: -352px -224px;
+}
+
+.sprite-pos-12-0 {
+    object-position: -384px 0px;
+}
+
+.sprite-pos-12-1 {
+    object-position: -384px -32px;
+}
+
+.sprite-pos-12-2 {
+    object-position: -384px -64px;
+}
+
+.sprite-pos-12-3 {
+    object-position: -384px -96px;
+}
+
+.sprite-pos-12-4 {
+    object-position: -384px -128px;
+}
+
+.sprite-pos-12-5 {
+    object-position: -384px -160px;
+}
+
+.sprite-pos-12-6 {
+    object-position: -384px -192px;
+}
+
+.sprite-pos-12-7 {
+    object-position: -384px -224px;
+}
+
+.sprite-pos-13-0 {
+    object-position: -416px 0px;
+}
+
+.sprite-pos-13-1 {
+    object-position: -416px -32px;
+}
+
+.sprite-pos-13-2 {
+    object-position: -416px -64px;
+}
+
+.sprite-pos-13-3 {
+    object-position: -416px -96px;
+}
+
+.sprite-pos-13-4 {
+    object-position: -416px -128px;
+}
+
+.sprite-pos-13-5 {
+    object-position: -416px -160px;
+}
+
+.sprite-pos-13-6 {
+    object-position: -416px -192px;
+}
+
+.sprite-pos-13-7 {
+    object-position: -416px -224px;
+}

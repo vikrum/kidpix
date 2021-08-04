@@ -1,0 +1,12 @@
+{
+  "hosting": {
+    "target": "kidpix",
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      "build.sh",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
