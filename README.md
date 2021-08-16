@@ -12,8 +12,8 @@ Please let me know if you mirror the site elsewhere and I'll add it here:
 - https://kidpix.app/
 - https://kidpix.neocities.org/
 - https://kidpix.web.app/
-- https://5f5.org/kidpix/
-
+- https://vikrum.github.io/kidpix/
+- 
 ### Questions or Bugs?
 
 Leave a note: https://github.com/vikrum/kidpix/issues
