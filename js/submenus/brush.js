@@ -110,23 +110,18 @@ KiddoPaint.Submenu.wackybrush = [{
     {
         name: 'Spray Paint',
         imgSrc: 'img/tool-menu-wacky-brush-79.png',
-        handler: function() {
+        handler: function(e) {
             KiddoPaint.Display.canvas.classList = "";
             KiddoPaint.Display.canvas.classList.add('cursor-paint-brush');
-            KiddoPaint.Current.tool = KiddoPaint.Tools.PlainBrush;
-            KiddoPaint.Tools.PlainBrush.reset();
-            KiddoPaint.Tools.PlainBrush.spacing = 0;
-            KiddoPaint.Tools.PlainBrush.texture = function() {
-                return KiddoPaint.Brushes.Spray(KiddoPaint.Current.color, KiddoPaint.Current.terColor)
+            KiddoPaint.Tools.SpritePlacer.image = KiddoPaint.Textures.SprayPaint2(KiddoPaint.Current.color);
+            KiddoPaint.Tools.SpritePlacer.soundBefore = function() {};
+            KiddoPaint.Tools.SpritePlacer.soundDuring = function() {
+                KiddoPaint.Sounds.brushspraypaint();
             };
-            KiddoPaint.Tools.PlainBrush.preprocess = function() {
-                KiddoPaint.Display.context.shadowBlur = 16;
-                KiddoPaint.Display.context.shadowColor = KiddoPaint.Current.altColor;
-            };
-            KiddoPaint.Tools.PlainBrush.postprocess = function() {
-                KiddoPaint.Display.context.shadowBlur = 0;
-                KiddoPaint.Display.context.shadowColor = null;
-            };
+            KiddoPaint.Current.tool = KiddoPaint.Tools.SpritePlacer;
+            if (e.ctrlKey) {
+                show_generic_submenu('spray');
+            }
         }
     },
     {
@@ -144,7 +139,7 @@ KiddoPaint.Submenu.wackybrush = [{
         handler: function() {
             KiddoPaint.Display.canvas.classList = "";
             KiddoPaint.Display.canvas.classList.add('cursor-paint-brush');
-            KiddoPaint.Sounds.unimpl();
+            KiddoPaint.Current.tool = KiddoPaint.Tools.ThreeDBrush;
         }
     },
     {
@@ -166,15 +161,23 @@ KiddoPaint.Submenu.wackybrush = [{
             KiddoPaint.Sounds.unimpl();
         }
     },
+    */
     {
         name: 'Connect The Dots',
         imgSrc: 'img/tool-menu-wacky-brush-84.png',
         handler: function() {
             KiddoPaint.Display.canvas.classList = "";
             KiddoPaint.Display.canvas.classList.add('cursor-paint-brush');
-            KiddoPaint.Sounds.unimpl();
+            KiddoPaint.Current.tool = KiddoPaint.Tools.PlainBrush;
+            KiddoPaint.Tools.PlainBrush.reset();
+            KiddoPaint.Tools.PlainBrush.spacing = 25;
+            KiddoPaint.Tools.PlainBrush.soundduring = KiddoPaint.Sounds.brushtwirly;
+            KiddoPaint.Tools.PlainBrush.texture = function(step, pstep) {
+                return KiddoPaint.Brushes.ConnectTheDots(KiddoPaint.Current.modifiedMeta ? KiddoPaint.Colors.nextColor() : KiddoPaint.Current.color, pstep)
+            };
         }
     },
+    /*
     {
         name: 'Alphabet Line',
         imgSrc: 'img/tool-menu-wacky-brush-85.png',
@@ -278,6 +281,20 @@ KiddoPaint.Submenu.wackybrush = [{
         }
     },
     {
+        name: 'Starburst',
+        imgSrc: 'img/br-starburst.png',
+        handler: function() {
+            KiddoPaint.Display.canvas.classList = "";
+            KiddoPaint.Display.canvas.classList.add('cursor-paint-brush');
+            KiddoPaint.Tools.Line.size = KiddoPaint.Current.modified ? 3 : 2;
+            KiddoPaint.Tools.Line.stomp = false;
+            KiddoPaint.Tools.Line.texture = function() {
+                return KiddoPaint.Textures.Solid(KiddoPaint.Current.color);
+            }
+            KiddoPaint.Current.tool = KiddoPaint.Tools.Line;
+        }
+    },
+    {
         name: 'The Looper',
         imgSrc: 'img/tool-menu-wacky-brush-92.png',
         handler: function() {
@@ -303,10 +320,11 @@ KiddoPaint.Submenu.wackybrush = [{
         handler: function() {
             KiddoPaint.Display.canvas.classList = "";
             KiddoPaint.Display.canvas.classList.add('cursor-paint-brush');
-            KiddoPaint.Current.tool = KiddoPaint.Tools.Brush;
-            KiddoPaint.Tools.Brush.reset();
-            KiddoPaint.Tools.Brush.soundduring = KiddoPaint.Sounds.brushstars;
-            KiddoPaint.Tools.Brush.texture = function() {
+            KiddoPaint.Current.tool = KiddoPaint.Tools.PlainBrush;
+            KiddoPaint.Tools.PlainBrush.reset();
+            KiddoPaint.Tools.PlainBrush.spacing = 36;
+            KiddoPaint.Tools.PlainBrush.soundduring = KiddoPaint.Sounds.brushstars;
+            KiddoPaint.Tools.PlainBrush.texture = function() {
                 return KiddoPaint.Builders.Prints(KiddoPaint.Current.color, KiddoPaint.Alphabet.nextWingding(2));
             };
         }
@@ -317,7 +335,13 @@ KiddoPaint.Submenu.wackybrush = [{
         handler: function() {
             KiddoPaint.Display.canvas.classList = "";
             KiddoPaint.Display.canvas.classList.add('cursor-paint-brush');
-            KiddoPaint.Sounds.unimpl();
+            KiddoPaint.Current.tool = KiddoPaint.Tools.PlainBrush;
+            KiddoPaint.Tools.PlainBrush.reset();
+            KiddoPaint.Tools.PlainBrush.soundduring = KiddoPaint.Sounds.brushxos;
+            KiddoPaint.Tools.PlainBrush.spacing = 36;
+            KiddoPaint.Tools.PlainBrush.texture = function() {
+                return KiddoPaint.Builders.Prints(KiddoPaint.Current.color, KiddoPaint.Alphabet.nextWingding(1));
+            };
         }
     },
     {
@@ -326,10 +350,11 @@ KiddoPaint.Submenu.wackybrush = [{
         handler: function() {
             KiddoPaint.Display.canvas.classList = "";
             KiddoPaint.Display.canvas.classList.add('cursor-paint-brush');
-            KiddoPaint.Current.tool = KiddoPaint.Tools.Brush;
-            KiddoPaint.Tools.Brush.reset();
-            KiddoPaint.Tools.Brush.soundduring = KiddoPaint.Sounds.brushcards;
-            KiddoPaint.Tools.Brush.texture = function() {
+            KiddoPaint.Current.tool = KiddoPaint.Tools.PlainBrush;
+            KiddoPaint.Tools.PlainBrush.reset();
+            KiddoPaint.Tools.PlainBrush.soundduring = KiddoPaint.Sounds.brushcards;
+            KiddoPaint.Tools.PlainBrush.spacing = 36;
+            KiddoPaint.Tools.PlainBrush.texture = function() {
                 return KiddoPaint.Builders.Prints(KiddoPaint.Current.color, KiddoPaint.Alphabet.nextWingding(3));
             };
         }
@@ -340,10 +365,11 @@ KiddoPaint.Submenu.wackybrush = [{
         handler: function() {
             KiddoPaint.Display.canvas.classList = "";
             KiddoPaint.Display.canvas.classList.add('cursor-paint-brush');
-            KiddoPaint.Current.tool = KiddoPaint.Tools.Brush;
-            KiddoPaint.Tools.Brush.reset();
-            KiddoPaint.Tools.Brush.soundduring = KiddoPaint.Sounds.brushshapes;
-            KiddoPaint.Tools.Brush.texture = function() {
+            KiddoPaint.Current.tool = KiddoPaint.Tools.PlainBrush;
+            KiddoPaint.Tools.PlainBrush.reset();
+            KiddoPaint.Tools.PlainBrush.soundduring = KiddoPaint.Sounds.brushshapes;
+            KiddoPaint.Tools.PlainBrush.spacing = 36;
+            KiddoPaint.Tools.PlainBrush.texture = function() {
                 return KiddoPaint.Builders.Prints(KiddoPaint.Current.color, KiddoPaint.Alphabet.nextWingding(4));
             };
         }
@@ -353,12 +379,12 @@ KiddoPaint.Submenu.wackybrush = [{
         emoji: '🐾',
         handler: function() {
             KiddoPaint.Display.canvas.classList = "";
-            KiddoPaint.Display.canvas.classList.add('cursor-none');
+            KiddoPaint.Display.canvas.classList.add('cursor-paint-brush');
             KiddoPaint.Current.tool = KiddoPaint.Tools.Brush;
             KiddoPaint.Tools.Brush.reset();
             KiddoPaint.Tools.Brush.soundduring = KiddoPaint.Sounds.brushprints;
             KiddoPaint.Tools.Brush.texture = function(angle) {
-                return KiddoPaint.Builders.Prints(KiddoPaint.Current.color, KiddoPaint.Current.modifiedMeta ? '👣' : '🐾', angle);
+                return KiddoPaint.Builders.Prints(KiddoPaint.Current.color, KiddoPaint.Current.modifiedMeta ? '👣' : '🐾', angle).brush;
             };
         }
     },

@@ -1,64 +1,67 @@
 KiddoPaint.Submenu.spray = [{
-        name: 'Bezier Mean Streak',
-        imgSrc: 'img/pw1.png',
+        name: 'Spray Paint 2',
+        imgJs: function() {
+            return KiddoPaint.Textures.SprayPaint2().toDataURL();
+        },
         handler: function() {
-            KiddoPaint.Tools.PlainBrush.reset();
-            KiddoPaint.Tools.PlainBrush.spacing = 1;
-            KiddoPaint.Tools.PlainBrush.texture = function(step) {
-                return KiddoPaint.Brushes.MeanStreak(step)
-            };
-            KiddoPaint.Tools.BezFollow.synthtool = KiddoPaint.Tools.PlainBrush;
-            KiddoPaint.Current.tool = KiddoPaint.Tools.BezFollow;
+            KiddoPaint.Tools.SpritePlacer.image = KiddoPaint.Textures.SprayPaint2(KiddoPaint.Current.color);
+            KiddoPaint.Tools.SpritePlacer.soundBefore = function() {};
+            KiddoPaint.Tools.SpritePlacer.soundDuring = function() {};
+            KiddoPaint.Current.tool = KiddoPaint.Tools.SpritePlacer;
         }
     },
     {
-        name: 'Bezier Spray Can',
-        imgSrc: 'img/pw2.png',
+        name: 'Spray Paint 3',
+        imgJs: function() {
+            return KiddoPaint.Textures.SprayPaint3().toDataURL();
+        },
         handler: function() {
-            KiddoPaint.Tools.PlainBrush.reset();
-            KiddoPaint.Tools.PlainBrush.spacing = 0;
-            KiddoPaint.Tools.PlainBrush.texture = function() {
-                return KiddoPaint.Brushes.Spray(KiddoPaint.Current.color, KiddoPaint.Current.terColor)
-            };
-            KiddoPaint.Tools.PlainBrush.preprocess = function() {
-                KiddoPaint.Display.context.shadowBlur = 16;
-                KiddoPaint.Display.context.shadowColor = KiddoPaint.Current.altColor;
-            };
-            KiddoPaint.Tools.PlainBrush.postprocess = function() {
-                KiddoPaint.Display.context.shadowBlur = 0;
-                KiddoPaint.Display.context.shadowColor = null;
-            };
-            KiddoPaint.Tools.BezFollow.synthtool = KiddoPaint.Tools.PlainBrush;
-            KiddoPaint.Current.tool = KiddoPaint.Tools.BezFollow;
+            KiddoPaint.Tools.SpritePlacer.image = KiddoPaint.Textures.SprayPaint3(KiddoPaint.Current.color);
+            KiddoPaint.Current.tool = KiddoPaint.Tools.SpritePlacer;
         }
     },
     {
+        name: 'Spray Paint 4',
+        imgJs: function() {
+            return KiddoPaint.Textures.SprayPaint4().toDataURL();
+        },
+        handler: function() {
+            KiddoPaint.Tools.SpritePlacer.image = KiddoPaint.Textures.SprayPaint4(KiddoPaint.Current.color);
+            KiddoPaint.Current.tool = KiddoPaint.Tools.SpritePlacer;
+        }
+    },
+    {
+        name: 'Spray Paint 5',
+        imgJs: function() {
+            return KiddoPaint.Textures.SprayPaint5().toDataURL();
+        },
+        handler: function() {
+            KiddoPaint.Tools.SpritePlacer.image = KiddoPaint.Textures.SprayPaint5(KiddoPaint.Current.color);
+            KiddoPaint.Current.tool = KiddoPaint.Tools.SpritePlacer;
+        }
+    },
+    {
+        name: 'Spray Paint 6',
+        imgJs: function() {
+            return KiddoPaint.Textures.SprayPaint6().toDataURL();
+        },
+        handler: function() {
+            KiddoPaint.Tools.SpritePlacer.image = KiddoPaint.Textures.SprayPaint6(KiddoPaint.Current.color);
+            KiddoPaint.Current.tool = KiddoPaint.Tools.SpritePlacer;
+        }
+    },
+    {
+        name: 'Spray Paint 7',
+        imgJs: function() {
+            return KiddoPaint.Textures.SprayPaint7().toDataURL();
+        },
+        handler: function() {
+            KiddoPaint.Tools.SpritePlacer.image = KiddoPaint.Textures.SprayPaint7(KiddoPaint.Current.color);
+            KiddoPaint.Current.tool = KiddoPaint.Tools.SpritePlacer;
+        }
+    }, {
         name: 'spacer',
         invisible: true,
         handler: true
-    },
-    {
-        name: 'Bar Spray Can',
-        text: 'bar',
-        handler: function() {
-            KiddoPaint.Current.tool = KiddoPaint.Tools.PlainBrush;
-            KiddoPaint.Tools.PlainBrush.reset();
-            KiddoPaint.Tools.PlainBrush.spacing = 0;
-            KiddoPaint.Tools.PlainBrush.texture = function() {
-                return KiddoPaint.Brushes.Dumbbell(KiddoPaint.Current.color, KiddoPaint.Current.terColor)
-            };
-        }
-    },
-    {
-        name: 'Icy Spray Can',
-        text: 'icy',
-        handler: function() {
-            KiddoPaint.Current.tool = KiddoPaint.Tools.PlainBrush;
-            KiddoPaint.Tools.PlainBrush.reset();
-            KiddoPaint.Tools.PlainBrush.spacing = 0;
-            KiddoPaint.Tools.PlainBrush.texture = function() {
-                return KiddoPaint.Brushes.Icy(KiddoPaint.Current.color, KiddoPaint.Current.terColor)
-            };
-        }
     },
 ];

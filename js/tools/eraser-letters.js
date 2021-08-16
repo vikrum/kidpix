@@ -31,6 +31,7 @@ KiddoPaint.Tools.Toolbox.EraserLetters = function() {
 
     this.toolDraw = function() {
         if (tool.isDown) {
+            KiddoPaint.Sounds.mixershadowbox();
             let rx = getRandomFloat(-10, KiddoPaint.Display.canvas.width);
             let ry = getRandomFloat(-10, KiddoPaint.Display.canvas.height);
             let rs = getRandomInt(24, 500);

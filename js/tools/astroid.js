@@ -8,7 +8,7 @@ KiddoPaint.Tools.Toolbox.Astroid = function() {
 
     // http://mathworld.wolfram.com/Astroid.html
     this.drawAstroid = function(pt1, pt2, pt3) {
-        var interval = 31 * KiddoPaint.Current.scaling;
+        var interval = 37 * KiddoPaint.Current.scaling;
 
         seg1deltax = (pt2.x - pt1.x) / interval;
         seg1deltay = (pt2.y - pt1.y) / interval;
@@ -26,9 +26,16 @@ KiddoPaint.Tools.Toolbox.Astroid = function() {
                 y: pt2.y + (seg2deltay * i)
             };
             KiddoPaint.Display.context.beginPath();
+            KiddoPaint.Display.context.lineWidth = tool.size;
             KiddoPaint.Display.context.moveTo(Math.round(a1.x), Math.round(a1.y));
             KiddoPaint.Display.context.lineTo(Math.round(a2.x), Math.round(a2.y));
-            KiddoPaint.Display.context.strokeStyle = KiddoPaint.Current.modifiedMeta ? KiddoPaint.Colors.randomColor() : ((i % 2) ? KiddoPaint.Current.color : KiddoPaint.Current.altColor);
+            if (KiddoPaint.Current.modifiedMeta) {
+                KiddoPaint.Display.context.strokeStyle = KiddoPaint.Colors.randomColor();
+            } else if (KiddoPaint.Current.modifiedCtrl) {
+                KiddoPaint.Display.context.strokeStyle = ((i % 2) ? KiddoPaint.Current.color : KiddoPaint.Current.altColor);
+            } else {
+                KiddoPaint.Display.context.strokeStyle = KiddoPaint.Current.color;
+            }
             KiddoPaint.Display.context.stroke();
             KiddoPaint.Display.context.closePath();
         }

@@ -36,6 +36,9 @@ KiddoPaint.Tools.Toolbox.Tnt = function() {
                 clearInterval(intervalID); // Will clear the timer.
                 KiddoPaint.Display.clearAll();
                 KiddoPaint.Display.resumeUndo();
+            } else if (KiddoPaint.Current.modifiedMeta) { // hidden feature to block completion
+                clearInterval(intervalID); // Will clear the timer.
+                KiddoPaint.Display.resumeUndo(); // Already saved to main above in previous frames, so no need here
             }
         }
     };

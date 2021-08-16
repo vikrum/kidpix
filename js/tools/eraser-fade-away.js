@@ -3,24 +3,25 @@ KiddoPaint.Tools.Toolbox.EraserFadeAway = function() {
     this.mousedown = function(ev) {
         var ctx = KiddoPaint.Display.context;
         setTimeout(function() {
+            KiddoPaint.Sounds.eraserfadeb();
             ctx.fillStyle = KiddoPaint.Textures.Screen1();
             ctx.fillRect(0, 0, KiddoPaint.Display.canvas.width, KiddoPaint.Display.canvas.height);
         }, 500);
         setTimeout(function() {
+            KiddoPaint.Sounds.eraserfadea();
             ctx.fillStyle = KiddoPaint.Textures.Screen2();
             ctx.fillRect(0, 0, KiddoPaint.Display.canvas.width, KiddoPaint.Display.canvas.height);
-        }, 1000);
-        setTimeout(function() {
             ctx.fillStyle = KiddoPaint.Textures.Screen3();
             ctx.fillRect(0, 0, KiddoPaint.Display.canvas.width, KiddoPaint.Display.canvas.height);
-        }, 1800);
+        }, 1200);
         setTimeout(function() {
+            KiddoPaint.Sounds.eraserfadeb();
             ctx.fillStyle = KiddoPaint.Textures.Screen4();
             ctx.fillRect(0, 0, KiddoPaint.Display.canvas.width, KiddoPaint.Display.canvas.height);
-        }, 2500);
+        }, 1900);
         setTimeout(function() {
             KiddoPaint.Display.clearAll();
-        }, 3000);
+        }, 2000);
     };
     this.mousemove = function(ev) {};
     this.mouseup = function(ev) {};

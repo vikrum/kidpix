@@ -4,8 +4,7 @@ KiddoPaint.Submenu.jumble = [{
         handler: function() {
             KiddoPaint.Display.canvas.classList = "";
             KiddoPaint.Display.canvas.classList.add('cursor-guy-smile');
-            KiddoPaint.Tools.WholeCanvasEffect.effect = JumbleFx.INVERT;
-            KiddoPaint.Current.tool = KiddoPaint.Tools.WholeCanvasEffect;
+            KiddoPaint.Current.tool = KiddoPaint.Tools.ElectricMixerInvert;
         }
     },
     {
@@ -24,7 +23,7 @@ KiddoPaint.Submenu.jumble = [{
             KiddoPaint.Tools.AnimBrush.texture = function(step, distancePrev) {
                 KiddoPaint.Display.canvas.classList = "";
                 KiddoPaint.Display.canvas.classList.add('cursor-guy-wow');
-                //                KiddoPaint.Sounds.brushleakypen(); // sound
+                KiddoPaint.Sounds.bubblepops();
                 let color = KiddoPaint.Colors.randomAllColor();
                 return KiddoPaint.Brushes.Raindrops(color);
             }
@@ -60,7 +59,9 @@ KiddoPaint.Submenu.jumble = [{
     {
         name: 'The Outliner',
         imgSrc: 'img/tool-submenu-wacky-mixer-169.png',
-        handler: function() {}
+        handler: function() {
+            KiddoPaint.Sounds.unimpl();
+        }
     },
     {
         name: 'Shadow Boxes',
@@ -74,12 +75,16 @@ KiddoPaint.Submenu.jumble = [{
     {
         name: 'Zoom In',
         imgSrc: 'img/tool-submenu-wacky-mixer-171.png',
-        handler: function() {}
+        handler: function() {
+            KiddoPaint.Sounds.unimpl();
+        }
     },
     {
         name: 'Broken Glass',
         imgSrc: 'img/tool-submenu-wacky-mixer-172.png',
-        handler: function() {}
+        handler: function() {
+            KiddoPaint.Sounds.unimpl();
+        }
     },
     {
         name: 'Picture In A Picture',
@@ -93,7 +98,9 @@ KiddoPaint.Submenu.jumble = [{
     {
         name: 'The Highlighter',
         imgSrc: 'img/tool-submenu-wacky-mixer-174.png',
-        handler: function() {}
+        handler: function() {
+            KiddoPaint.Sounds.unimpl();
+        }
     },
     {
         name: 'Pattern Maker',
@@ -107,13 +114,17 @@ KiddoPaint.Submenu.jumble = [{
     {
         name: 'Wrap Around',
         imgSrc: 'img/tool-submenu-wacky-mixer-176.png',
-        handler: function() {}
+        handler: function() {
+            KiddoPaint.Sounds.unimpl();
+        }
     },
+    /*
     {
         name: 'Snow Flakes And Rain Drops',
         imgSrc: 'img/tool-submenu-wacky-mixer-177.png',
         handler: function() {}
     },
+    */
     {
         name: 'Swirl',
         emoji: '🍭',

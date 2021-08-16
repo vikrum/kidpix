@@ -217,9 +217,21 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 Tools Used
 ----------
+http://cd.textfiles.com/educationp/FUNDAMEN/KIDPIX/
+http://cd.textfiles.com/garbo/MAC/GRAPHICS/ --> kidpix.cpt
+https://archive.org/details/KIDPIX_WIN
+https://archive.org/details/KID_PIX_DOS
+http://jamesfriend.com.au/pce-js/
+https://classicreload.com/win3x-kidpix.html
+
+https://fontmeme.com/pixel-fonts/
+https://www.kreativekorp.com/software/fonts/urbanrenewal.shtml
 http://perfectionkills.com/exploring-canvas-drawing-techniques/
 http://panzi.github.io/mediaextract/
 https://onlinepngtools.com/create-transparent-png
 https://www.leshylabs.com/apps/sstool/
 for moo in `ls -1 *.bmp`; do convert $moo -transparent silver $moo.png; done
 $ afinfo kidpix-ding-dong.wav | grep estimated
+
+# Convert PNG pixels to canvas commands
+convert spray-br-7.png txt:|grep -v FFFFFF00|grep -ve "^#"|awk -F ':' '{print "contextPattern.fillRect(", $1 , ", 1, 1);"}'

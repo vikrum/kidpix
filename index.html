@@ -3,16 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:title" content="JS Kid Pix 1.0.2021" />
-  <meta property="og:site_name" content="JS Kid Pix" />
+  <meta property="og:title" content="JSKIDPIX v1.0.2021" />
+  <meta property="og:site_name" content="JSKIDPIX v1.0.2021" />
   <meta property="og:url" content="https://kidpix.app/" />
-  <meta property="og:description" content="JS Kid Pix / Kid Pix 1.0 was released in to the public domain and this is an HTML/JS reimplementation." />
+  <meta property="og:description" content="JSKIDPIX v1.0.2021" />
   <meta property="og:image" content="https://kidpix.app/static/jskidpix.png" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="632" />
   <meta property="og:image:height" content="394" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@vikrum5000">
+  <meta name="twitter:title" content="JSKIDPIX v1.0.2021">
+  <meta name="twitter:description" content="JSKidPix ✨">
+  <meta name="twitter:image" content="https://kidpix.app/static/jskidpix.png">
   <meta name="msapplication-tap-highlight" content="no" />
-  <title>JS Kid Pix 1.0.2021</title>
+  <title>JSKIDPIX v1.0.2021</title>
   <link rel="stylesheet" type="text/css" href="css/kidpix.css">
   <link rel="icon" type="image/png" href="img/kidpix.png" />
   <script type="text/javascript" src="js/app.js"></script>
@@ -20,67 +25,68 @@
 <body onload="init_kiddo_paint();">
 <div id="container">
   <div id="toolbar">
-    <button class="tool" id="save" title="Save"><img src="img/kp-m_27.png" class="pixelated"></button>
-    <button class="tool" id="pencil" title="Wacky Pencil"><img src="img/kp-m_28.png" class="pixelated" width="48" height="48"></button>
-    <button class="tool" id="line" title="Line"><img src="img/kp-m_29.png" class="pixelated" width="48" height="48"></button>
-    <button class="tool" id="square" title="Rectangle"><img src="img/kp-m_30.png" class="pixelated" width="48" height="48"></button>
-    <button class="tool" id="circle" title="Oval"><img src="img/kp-m_31.png" class="pixelated" width="48" height="48"></button>
-    <button class="tool" id="brush" title="Wacky Brush"><img src="img/kp-m_32.png" class="pixelated" width="48" height="48"></button>
-    <button class="tool" id="jumble" title="Electric Mixer"><img src="img/kp-m_33.png" class="pixelated" width="48" height="48"></button>
-    <button class="tool" id="flood" title="Paint Can"><img src="img/kp-m_34.png" class="pixelated" width="48" height="48"></button>
-    <button class="tool" id="eraser" title="Eraser"><img src="img/kp-m_35.png" class="pixelated" width="48" height="48"></button>
-    <button class="tool" id="alphabet" title="Text"><img src="img/kp-m_36.png" class="pixelated" width="48" height="48"></button>
-    <button class="tool" id="stamp" title="Rubber Stamps"><img src="img/kp-m_37.png" class="pixelated" width="48" height="48"></button>
-    <button class="tool" id="truck" title="Moving Van"><img src="img/kp-m_38.png" class="pixelated" width="48" height="48"></button>
-    <button class="tool" id="undo" title="The Undo Guy"><img src="img/kp-m_39.png" class="pixelated" width="48" height="48"></button>
-    <br>
-    <br>
+    <div id="mainbar">
+      <button class="tool" id="save" title="Save"><img src="img/kp-m_27.png" class="pixelated"></button>
+      <button class="tool" id="pencil" title="Wacky Pencil"><img src="img/kp-m_28.png" class="pixelated" width="48" height="48"></button>
+      <button class="tool" id="line" title="Line"><img src="img/kp-m_29.png" class="pixelated" width="48" height="48"></button>
+      <button class="tool" id="square" title="Rectangle"><img src="img/kp-m_30.png" class="pixelated" width="48" height="48"></button>
+      <button class="tool" id="circle" title="Oval"><img src="img/kp-m_31.png" class="pixelated" width="48" height="48"></button>
+      <button class="tool" id="brush" title="Wacky Brush"><img src="img/kp-m_32.png" class="pixelated" width="48" height="48"></button>
+      <button class="tool" id="jumble" title="Electric Mixer"><img src="img/kp-m_33.png" class="pixelated" width="48" height="48"></button>
+      <button class="tool" id="flood" title="Paint Can"><img src="img/kp-m_34.png" class="pixelated" width="48" height="48"></button>
+      <button class="tool" id="eraser" title="Eraser"><img src="img/kp-m_35.png" class="pixelated" width="48" height="48"></button>
+      <button class="tool" id="alphabet" title="Text"><img src="img/kp-m_36.png" class="pixelated" width="48" height="48"></button>
+      <button class="tool" id="stamp" title="Rubber Stamps"><img src="img/kp-m_37.png" class="pixelated" width="48" height="48"></button>
+      <button class="tool" id="truck" title="Moving Van"><img src="img/kp-m_38.png" class="pixelated" width="48" height="48"></button>
+      <button class="tool" id="undo" title="The Undo Guy"><img src="img/kp-m_39.png" class="pixelated" width="48" height="48"></button>
+    </div>
+<br>
     <div id="colorbar">
       <button class="currentColor" id="currentColor"> </button>
       <div id="colorselector">
         <button class="color"></button><button class="color"></button><button class="color"></button><button class="color"></button><button class="color"></button><button class="color"></button><button class="color"></button><button class="color"></button><button class="color"></button><button class="color"></button><button class="color"></button><button class="color"></button><button class="color"></button><button class="color"></button><button class="color"></button><button class="color"></button><button class="color"></button><button class="color"></button><button class="color"></button><button class="color"></button><button class="color"></button><button class="color"></button><button class="color"></button><button class="color"></button><button class="color"></button><button class="color"></button><button class="color"></button><button class="color"></button><button class="color"></button><button class="color"></button><button class="color"></button><button class="color"></button>
       </div>
-    </div>
-    <div class="github">
-      <a href="https://github.com/vikrum/kidpix/" target="_blank"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" class="github"/></a>
+      <div><button class="colornav" id="colorprev">←</button><button class="colornav" id="colornext">→</button></div>
+      <br>
+      <div><button class="colornav"><a href="https://github.com/vikrum/" target="_blank"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIgMGMtNi42MjYgMC0xMiA1LjM3My0xMiAxMiAwIDUuMzAyIDMuNDM4IDkuOCA4LjIwNyAxMS4zODcuNTk5LjExMS43OTMtLjI2MS43OTMtLjU3N3YtMi4yMzRjLTMuMzM4LjcyNi00LjAzMy0xLjQxNi00LjAzMy0xLjQxNi0uNTQ2LTEuMzg3LTEuMzMzLTEuNzU2LTEuMzMzLTEuNzU2LTEuMDg5LS43NDUuMDgzLS43MjkuMDgzLS43MjkgMS4yMDUuMDg0IDEuODM5IDEuMjM3IDEuODM5IDEuMjM3IDEuMDcgMS44MzQgMi44MDcgMS4zMDQgMy40OTIuOTk3LjEwNy0uNzc1LjQxOC0xLjMwNS43NjItMS42MDQtMi42NjUtLjMwNS01LjQ2Ny0xLjMzNC01LjQ2Ny01LjkzMSAwLTEuMzExLjQ2OS0yLjM4MSAxLjIzNi0zLjIyMS0uMTI0LS4zMDMtLjUzNS0xLjUyNC4xMTctMy4xNzYgMCAwIDEuMDA4LS4zMjIgMy4zMDEgMS4yMy45NTctLjI2NiAxLjk4My0uMzk5IDMuMDAzLS40MDQgMS4wMi4wMDUgMi4wNDcuMTM4IDMuMDA2LjQwNCAyLjI5MS0xLjU1MiAzLjI5Ny0xLjIzIDMuMjk3LTEuMjMuNjUzIDEuNjUzLjI0MiAyLjg3NC4xMTggMy4xNzYuNzcuODQgMS4yMzUgMS45MTEgMS4yMzUgMy4yMjEgMCA0LjYwOS0yLjgwNyA1LjYyNC01LjQ3OSA1LjkyMS40My4zNzIuODIzIDEuMTAyLjgyMyAyLjIyMnYzLjI5M2MwIC4zMTkuMTkyLjY5NC44MDEuNTc2IDQuNzY1LTEuNTg5IDguMTk5LTYuMDg2IDguMTk5LTExLjM4NiAwLTYuNjI3LTUuMzczLTEyLTEyLTEyeiIvPjwvc3ZnPg==" class="github"/></a></button><button class="colornav"><a href="https://twitter.com/vikrum5000/status/1423014244644122627" target="_blank"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjQgNC41NTdjLS44ODMuMzkyLTEuODMyLjY1Ni0yLjgyOC43NzUgMS4wMTctLjYwOSAxLjc5OC0xLjU3NCAyLjE2NS0yLjcyNC0uOTUxLjU2NC0yLjAwNS45NzQtMy4xMjcgMS4xOTUtLjg5Ny0uOTU3LTIuMTc4LTEuNTU1LTMuNTk0LTEuNTU1LTMuMTc5IDAtNS41MTUgMi45NjYtNC43OTcgNi4wNDUtNC4wOTEtLjIwNS03LjcxOS0yLjE2NS0xMC4xNDgtNS4xNDQtMS4yOSAyLjIxMy0uNjY5IDUuMTA4IDEuNTIzIDYuNTc0LS44MDYtLjAyNi0xLjU2Ni0uMjQ3LTIuMjI5LS42MTYtLjA1NCAyLjI4MSAxLjU4MSA0LjQxNSAzLjk0OSA0Ljg5LS42OTMuMTg4LTEuNDUyLjIzMi0yLjIyNC4wODQuNjI2IDEuOTU2IDIuNDQ0IDMuMzc5IDQuNiAzLjQxOS0yLjA3IDEuNjIzLTQuNjc4IDIuMzQ4LTcuMjkgMi4wNCAyLjE3OSAxLjM5NyA0Ljc2OCAyLjIxMiA3LjU0OCAyLjIxMiA5LjE0MiAwIDE0LjMwNy03LjcyMSAxMy45OTUtMTQuNjQ2Ljk2Mi0uNjk1IDEuNzk3LTEuNTYyIDIuNDU3LTIuNTQ5eiIvPjwvc3ZnPg=="
+ class="github"/></a></button></div>
     </div>
   </div>
-
   <div id="hcontainer">
     <div id="subtoolbars" class="subtoolbar">
        <div id="genericsubmenu" class="hidden"></div>
        <div id="alphabettoolbar" class="hidden">
-         <button class="tool" id="xal0"></button>
-         <button class="tool" id="xal1"></button>
-         <button class="tool" id="xal2"></button>
-         <button class="tool" id="xal3"></button>
-         <button class="tool" id="xal4"></button>
-         <button class="tool" id="xal5"></button>
-         <button class="tool" id="xal6"></button>
-         <button class="tool" id="xal7"></button>
-         <button class="tool" id="xal8"></button>
-         <button class="tool" id="xal9"></button>
-         <button class="tool" id="xal10"></button>
-         <button class="tool" id="xal11"></button>
-         <button class="tool" id="xal12"></button>
-         <button class="tool" id="xal13"></button>
-         <button class="tool" id="xal14"></button>
-         <button class="tool" id="xal15"></button>
-         <button class="tool" id="xal16"></button>
-         <button class="tool" id="xal17"></button>
-         <button class="tool" id="xal18"></button>
-         <button class="tool" id="xal19"></button>
-         <button class="tool" id="xal20"></button>
-         <button class="tool" id="xal21"></button>
-         <button class="tool" id="xal22"></button>
-         <button class="tool" id="xal23"></button>
-         <button class="tool" id="xal24"></button>
-         <button class="tool" id="xal25"></button>
-         <button class="tool" id="alnext"><h1>↪</h1></button>
+         <button class="tool alphabet" id="xal0"></button>
+         <button class="tool alphabet" id="xal1"></button>
+         <button class="tool alphabet" id="xal2"></button>
+         <button class="tool alphabet" id="xal3"></button>
+         <button class="tool alphabet" id="xal4"></button>
+         <button class="tool alphabet" id="xal5"></button>
+         <button class="tool alphabet" id="xal6"></button>
+         <button class="tool alphabet" id="xal7"></button>
+         <button class="tool alphabet" id="xal8"></button>
+         <button class="tool alphabet" id="xal9"></button>
+         <button class="tool alphabet" id="xal10"></button>
+         <button class="tool alphabet" id="xal11"></button>
+         <button class="tool alphabet" id="xal12"></button>
+         <button class="tool alphabet" id="xal13"></button>
+         <button class="tool alphabet" id="xal14"></button>
+         <button class="tool alphabet" id="xal15"></button>
+         <button class="tool alphabet" id="xal16"></button>
+         <button class="tool alphabet" id="xal17"></button>
+         <button class="tool alphabet" id="xal18"></button>
+         <button class="tool alphabet" id="xal19"></button>
+         <button class="tool alphabet" id="xal20"></button>
+         <button class="tool alphabet" id="xal21"></button>
+         <button class="tool alphabet" id="xal22"></button>
+         <button class="tool alphabet" id="xal23"></button>
+         <button class="tool alphabet" id="xal24"></button>
+         <button class="tool alphabet" id="xal25"></button>
+         <button class="tool alphabet" id="alnext"><h1>↪</h1></button>
        </div>
     </div>
     <div id="paint">
-      <canvas id="kiddopaint" width="1920" height="1200">:(</canvas>
+      <canvas id="kiddopaint" class="pixelated" width="1920" height="1200">:(</canvas>
     </div>
   </div>
 <div>

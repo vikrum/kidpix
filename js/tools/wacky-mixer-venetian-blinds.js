@@ -41,6 +41,7 @@ KiddoPaint.Tools.Toolbox.WackyMixerVenetianBlinds = function() {
 
     this.toolDraw = function() {
         if (tool.isDown) {
+            KiddoPaint.Sounds.mixervenetian();
             // alpha hide hack
             KiddoPaint.Display.animContext.fillStyle = 'white';
             KiddoPaint.Display.animContext.fillRect(0, 0, KiddoPaint.Display.main_canvas.width, KiddoPaint.Display.main_canvas.height);

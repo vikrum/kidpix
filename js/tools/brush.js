@@ -38,12 +38,8 @@ KiddoPaint.Tools.Toolbox.Brush = function() {
                 KiddoPaint.Display.context.drawImage(brushFill, Math.round(ev._x), Math.round(ev._y));
                 tool.previousEv = ev;
                 // next builder should be spaced out
-                tool.minDistance = 25;
+                tool.minDistance = 25 * KiddoPaint.Current.scaling;
             }
-        } else {
-            var angle = tool.previousEv == null ? 0 : angleBetween(tool.previousEv, ev) + 0.5 * Math.PI;
-            var brushFill = tool.texture(angle);
-            KiddoPaint.Display.previewContext.drawImage(brushFill, Math.round(ev._x), Math.round(ev._y));
         }
     };
 
