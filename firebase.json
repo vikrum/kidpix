@@ -2,6 +2,13 @@
   "hosting": {
     "target": "kidpix",
     "public": ".",
+    "headers": [ {
+    "source": "**/*.@(mp3)",
+    "headers": [ {
+      "key": "Content-Range",
+      "value": "bytes 0-7105"
+    } ]
+  } ],
     "ignore": [
       "firebase.json",
       "build.sh",

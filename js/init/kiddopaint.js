@@ -26,6 +26,7 @@ function init_kiddo_paint() {
         canvas.width = canvas.width;
         canvas.height = canvas.height;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.imageSmoothingEnabled = false;
 
         var container = canvas.parentNode;
 
@@ -33,32 +34,40 @@ function init_kiddo_paint() {
         bnimCanvas.id = 'bnimCanvas';
         bnimCanvas.width = canvas.width;
         bnimCanvas.height = canvas.height;
+        bnimCanvas.className = 'pixelated';
         container.appendChild(bnimCanvas);
         bnimContext = bnimCanvas.getContext('2d');
+        bnimContext.imageSmoothingEnabled = false;
         bnimContext.clearRect(0, 0, canvas.width, canvas.height);
 
         animCanvas = document.createElement('canvas');
         animCanvas.id = 'animCanvas';
         animCanvas.width = canvas.width;
         animCanvas.height = canvas.height;
+        animCanvas.className = 'pixelated';
         container.appendChild(animCanvas);
         animContext = animCanvas.getContext('2d');
+        animContext.imageSmoothingEnabled = false;
         animContext.clearRect(0, 0, canvas.width, canvas.height);
 
         previewCanvas = document.createElement('canvas');
         previewCanvas.id = 'previewCanvas';
         previewCanvas.width = canvas.width;
         previewCanvas.height = canvas.height;
+        previewCanvas.className = 'pixelated';
         container.appendChild(previewCanvas);
         previewContext = previewCanvas.getContext('2d');
+        previewContext.imageSmoothingEnabled = false;
         previewContext.clearRect(0, 0, canvas.width, canvas.height);
 
         tmpCanvas = document.createElement('canvas');
         tmpCanvas.id = 'tmpCanvas';
         tmpCanvas.width = canvas.width;
         tmpCanvas.height = canvas.height;
+        tmpCanvas.className = 'pixelated';
         container.appendChild(tmpCanvas);
         tmpContext = tmpCanvas.getContext('2d');
+        tmpContext.imageSmoothingEnabled = false;
         tmpContext.clearRect(0, 0, canvas.width, canvas.height);
 
         KiddoPaint.Display.canvas = tmpCanvas;
@@ -162,6 +171,8 @@ function init_listeners(canvas) {
     }, false);
 
     canvas.addEventListener('mouseleave', function() {
+        // we force a mouse up - this fixes a bug with some effects in which a clearPrev wipes the whole canvas
+        KiddoPaint.Current.tool.mouseup(KiddoPaint.Current.ev);
         KiddoPaint.Display.clearPreview();
         KiddoPaint.Display.clearAnim();
         KiddoPaint.Display.clearBnim();
@@ -214,6 +225,10 @@ function init_listeners(canvas) {
             KiddoPaint.Current.modifiedToggle = !KiddoPaint.Current.modifiedToggle;
         } else if (e.keyCode == 86) {
             KiddoPaint.Current.velToggle = !KiddoPaint.Current.velToggle;
+        } else if (e.ctrlKey && e.key === 'z') {
+            KiddoPaint.Sounds.mainmenu();
+            KiddoPaint.Sounds.oops();
+            KiddoPaint.Display.undo(!KiddoPaint.Current.modifiedAlt);
         }
     }
     document.onkeyup = function checkKey(e) {
@@ -267,6 +282,20 @@ function init_color_selector() {
     }
     set_colors_to_current_palette();
     document.getElementById('currentColor').style = "background-color:" + KiddoPaint.Current.color;
+    init_color_paging();
+}
+
+function init_color_paging() {
+    document.getElementById('colorprev').addEventListener('mousedown', function() {
+        KiddoPaint.Sounds.submenucolor();
+        KiddoPaint.Colors.prevPalette();
+        set_colors_to_current_palette();
+    });
+    document.getElementById('colornext').addEventListener('mousedown', function() {
+        KiddoPaint.Sounds.submenucolor();
+        KiddoPaint.Colors.nextPalette();
+        set_colors_to_current_palette();
+    });
 }
 
 function show_sub_toolbar(subtoolbar) {
@@ -448,13 +477,8 @@ function ev_canvas(ev) {
     KiddoPaint.Display.clearPreview();
     KiddoPaint.Current.ev = ev;
 
-    if (ev.layerX || ev.layerX == 0) {
-        ev._x = ev.layerX;
-        ev._y = ev.layerY;
-    } else if (ev.offsetX || ev.offsetX == 0) {
-        ev._x = ev.offsetX;
-        ev._y = ev.offsetY;
-    }
+    ev._x = ev.offsetX;
+    ev._y = ev.offsetY;
 
     // handle event
     if (ev.type === "touchstart") {
@@ -529,13 +553,11 @@ function mouse_wheel(ev) {
 }
 
 function save_to_file() {
-    //  var image = KiddoPaint.Display.main_canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-    //  window.location.href=image; 
-    var canvasToSave = KiddoPaint.Current.modifiedAlt ? trimCanvas(KiddoPaint.Display.main_canvas) : KiddoPaint.Display.main_canvas;
+    var canvasToSave = KiddoPaint.Current.modifiedAlt ? trimAndFlattenCanvas(KiddoPaint.Display.main_canvas) : KiddoPaint.Display.main_canvas;
     var image = canvasToSave.toDataURL("image/png");
     var a = document.createElement("a");
     a.href = image;
-    a.download = "kiddopaint-" + Date.now() + ".png";
+    a.download = "kidpix-" + Date.now() + ".png";
     a.click();
 }
 

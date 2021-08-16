@@ -113,6 +113,15 @@ KiddoPaint.Colors.nextPalette = function() {
     return KiddoPaint.Colors.Current.Palette;
 }
 
+KiddoPaint.Colors.prevPalette = function() {
+    KiddoPaint.Colors.Current.PaletteNumber -= 1;
+    if (KiddoPaint.Colors.Current.PaletteNumber < 0) {
+        KiddoPaint.Colors.Current.PaletteNumber = KiddoPaint.Colors.All.length - 1;
+    }
+    KiddoPaint.Colors.Current.Palette = KiddoPaint.Colors.All[KiddoPaint.Colors.Current.PaletteNumber];
+    return KiddoPaint.Colors.Current.Palette;
+}
+
 KiddoPaint.Colors.nextColor = function() {
     return KiddoPaint.Colors.Palette.Bright[KiddoPaint.Display.step % KiddoPaint.Colors.Palette.Bright.length];
 }

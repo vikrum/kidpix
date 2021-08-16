@@ -98,6 +98,7 @@ KiddoPaint.Submenu.eraser = [{
             KiddoPaint.Current.tool = KiddoPaint.Tools.EraserFadeAway;
         }
     },
+    /*
     {
         name: 'Drop Out',
         imgSrc: 'img/tool-submenu-eraser-188.png',
@@ -105,8 +106,10 @@ KiddoPaint.Submenu.eraser = [{
             KiddoPaint.Display.canvas.classList = "";
             KiddoPaint.Display.canvas.classList.add('cursor-crosshair');
             KiddoPaint.Current.tool = KiddoPaint.Tools.Eraser;
+            KiddoPaint.Sounds.unimpl();
         }
     },
+    */
     {
         name: 'Black Hole',
         imgSrc: 'img/tool-submenu-eraser-189.png',
@@ -114,6 +117,7 @@ KiddoPaint.Submenu.eraser = [{
             KiddoPaint.Display.canvas.classList = "";
             KiddoPaint.Display.canvas.classList.add('cursor-crosshair');
             KiddoPaint.Current.tool = KiddoPaint.Tools.Eraser;
+            KiddoPaint.Sounds.unimpl();
         }
     },
     {
@@ -123,8 +127,10 @@ KiddoPaint.Submenu.eraser = [{
             KiddoPaint.Display.canvas.classList = "";
             KiddoPaint.Display.canvas.classList.add('cursor-crosshair');
             KiddoPaint.Current.tool = KiddoPaint.Tools.Eraser;
+            KiddoPaint.Sounds.unimpl();
         }
     },
+    /*
     {
         name: 'Sweep',
         imgSrc: 'img/tool-submenu-eraser-191.png',
@@ -132,6 +138,8 @@ KiddoPaint.Submenu.eraser = [{
             KiddoPaint.Display.canvas.classList = "";
             KiddoPaint.Display.canvas.classList.add('cursor-crosshair');
             KiddoPaint.Current.tool = KiddoPaint.Tools.Eraser;
+	    KiddoPaint.Sounds.unimpl();
         }
     },
+    */
 ];

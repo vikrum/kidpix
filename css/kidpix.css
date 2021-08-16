@@ -30,6 +30,20 @@ body {
     flex-wrap: wrap;
 }
 
+#socialbar {
+    /*
+  border: solid;
+  border-color: red;
+*/
+    display: block;
+    width: 50px;
+}
+
+#mainbar {
+    display: flex;
+    flex-direction: column
+}
+
 #colorbar {
     /*
   border: solid;
@@ -45,17 +59,30 @@ body {
   border: solid;
   border-color: red;
 */
-    width: 55px;
+    width: 51px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-#toolbar {
-    /*
-  border: solid;
-  border-color: red;
-  */
-    display: block;
-    width: 50px;
-    float: left;
+@media (max-height: 1200px) {
+    #toolbar {
+        width: 100px;
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: wrap;
+        float: left;
+    }
+}
+
+@media (min-height: 1201px) {
+    #toolbar {
+        width: 50px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        float: left;
+    }
 }
 
 .hidden {
@@ -82,6 +109,11 @@ body {
     border-radius: 0;
 }
 
+.toolImg {
+    width: 36px;
+    height: 36px;
+}
+
 .currentColor {
     width: 50px;
     height: 50px;
@@ -99,41 +131,72 @@ body {
     border-radius: 0;
 }
 
+.colornav {
+    width: 25px;
+    height: 25px;
+    margin: 0px;
+    -webkit-border-radius: 0px;
+    -webkit-appearance: none;
+    border-radius: 0;
+    text-align: center;
+    padding: 3px 2px;
+    line-height: 1em;
+}
+
+.alphabet {
+    line-height: 1em;
+    margin: 0;
+}
+
 .github {
-    width: 95%;
+    width: 16px;
 }
 
 #paint {
-    position: relative;
+    display: grid;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
 }
 
 #kiddopaint {
     border: 1px solid #00f;
     cursor: crosshair;
+    grid-column: 1;
+    grid-row: 1;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
 }
 
 #tmpCanvas {
-    position: absolute;
-    top: 1px;
-    left: 1px;
+    border: 1px solid #00f;
+    grid-column: 1;
+    grid-row: 1;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
 }
 
 #previewCanvas {
-    position: absolute;
-    top: 1px;
-    left: 1px;
+    border: 1px solid #00f;
+    grid-column: 1;
+    grid-row: 1;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
 }
 
 #animCanvas {
-    position: absolute;
-    top: 1px;
-    left: 1px;
+    border: 1px solid #00f;
+    grid-column: 1;
+    grid-row: 1;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
 }
 
 #bnimCanvas {
-    position: absolute;
-    top: 1px;
-    left: 1px;
+    border: 1px solid #00f;
+    grid-column: 1;
+    grid-row: 1;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
 }
 
 h1 {
@@ -149,6 +212,7 @@ emj {
 
 .pixelated {
     image-rendering: pixelated;
+    image-rendering: crisp-edges;
 }
 
 .cursor-bucket {

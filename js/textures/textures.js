@@ -623,3 +623,222 @@ KiddoPaint.Textures.Screen4 = function() {
     contextPattern.fillRect(1, 0, 1, 2);
     return KiddoPaint.Display.context.createPattern(canvasPattern, 'repeat');
 }
+
+KiddoPaint.Textures.SprayPaint2 = function(color1) {
+    color1 = color1 || 'black';
+
+    var canvasPattern = document.createElement('canvas');
+    canvasPattern.width = 16;
+    canvasPattern.height = 16;
+    var contextPattern = canvasPattern.getContext('2d');
+
+    contextPattern.beginPath();
+    contextPattern.fillStyle = color1;
+    contextPattern.fillRect(7, 0, 1, 1);
+    contextPattern.fillRect(11, 1, 1, 1);
+    contextPattern.fillRect(2, 2, 1, 1);
+    contextPattern.fillRect(8, 2, 1, 1);
+    contextPattern.fillRect(5, 3, 1, 1);
+    contextPattern.fillRect(10, 4, 1, 1);
+    contextPattern.fillRect(14, 4, 1, 1);
+    contextPattern.fillRect(0, 5, 1, 1);
+    contextPattern.fillRect(6, 5, 1, 1);
+    contextPattern.fillRect(3, 6, 1, 1);
+    contextPattern.fillRect(9, 6, 1, 1);
+    contextPattern.fillRect(12, 6, 1, 1);
+    contextPattern.fillRect(7, 7, 1, 1);
+    contextPattern.fillRect(15, 7, 1, 1);
+    contextPattern.fillRect(5, 8, 1, 1);
+    contextPattern.fillRect(9, 8, 1, 1);
+    contextPattern.fillRect(0, 9, 1, 1);
+    contextPattern.fillRect(3, 9, 1, 1);
+    contextPattern.fillRect(12, 9, 1, 1);
+    contextPattern.fillRect(6, 10, 1, 1);
+    contextPattern.fillRect(10, 10, 1, 1);
+    contextPattern.fillRect(14, 10, 1, 1);
+    contextPattern.fillRect(4, 11, 1, 1);
+    contextPattern.fillRect(1, 12, 1, 1);
+    contextPattern.fillRect(7, 12, 1, 1);
+    contextPattern.fillRect(10, 12, 1, 1);
+    contextPattern.fillRect(13, 13, 1, 1);
+    contextPattern.fillRect(4, 14, 1, 1);
+    contextPattern.fillRect(8, 15, 1, 1);
+
+
+    return canvasPattern;
+}
+KiddoPaint.Textures.SprayPaint3 = function(color1) {
+    color1 = color1 || 'black';
+
+    var canvasPattern = document.createElement('canvas');
+    canvasPattern.width = 16;
+    canvasPattern.height = 16;
+    var contextPattern = canvasPattern.getContext('2d');
+
+    contextPattern.beginPath();
+    contextPattern.fillStyle = color1;
+    contextPattern.fillRect(8, 2, 1, 1);
+    contextPattern.fillRect(4, 3, 1, 1);
+    contextPattern.fillRect(11, 3, 1, 1);
+    contextPattern.fillRect(6, 5, 1, 1);
+    contextPattern.fillRect(10, 5, 1, 1);
+    contextPattern.fillRect(3, 6, 1, 1);
+    contextPattern.fillRect(13, 6, 1, 1);
+    contextPattern.fillRect(7, 7, 1, 1);
+    contextPattern.fillRect(10, 8, 1, 1);
+    contextPattern.fillRect(2, 9, 1, 1);
+    contextPattern.fillRect(5, 10, 1, 1);
+    contextPattern.fillRect(8, 10, 1, 1);
+    contextPattern.fillRect(12, 10, 1, 1);
+    contextPattern.fillRect(3, 12, 1, 1);
+    contextPattern.fillRect(6, 13, 1, 1);
+    contextPattern.fillRect(10, 13, 1, 1);
+
+
+    return canvasPattern;
+}
+KiddoPaint.Textures.SprayPaint4 = function(color1) {
+    color1 = color1 || 'black';
+
+    var canvasPattern = document.createElement('canvas');
+    canvasPattern.width = 16;
+    canvasPattern.height = 16;
+    var contextPattern = canvasPattern.getContext('2d');
+
+    contextPattern.beginPath();
+    contextPattern.fillStyle = color1;
+
+    contextPattern.fillRect(15, 0, 1, 1);
+    contextPattern.fillRect(13, 2, 1, 1);
+    contextPattern.fillRect(11, 4, 1, 1);
+    contextPattern.fillRect(9, 6, 1, 1);
+    contextPattern.fillRect(7, 8, 1, 1);
+    contextPattern.fillRect(5, 10, 1, 1);
+    contextPattern.fillRect(3, 12, 1, 1);
+    contextPattern.fillRect(1, 14, 1, 1);
+    return canvasPattern;
+}
+KiddoPaint.Textures.SprayPaint5 = function(color1) {
+    color1 = color1 || 'black';
+
+    var canvasPattern = document.createElement('canvas');
+    canvasPattern.width = 16;
+    canvasPattern.height = 16;
+    var contextPattern = canvasPattern.getContext('2d');
+
+    contextPattern.beginPath();
+    contextPattern.fillStyle = color1;
+    contextPattern.fillRect(1, 1, 1, 1);
+    contextPattern.fillRect(4, 1, 1, 1);
+    contextPattern.fillRect(7, 1, 1, 1);
+    contextPattern.fillRect(10, 1, 1, 1);
+    contextPattern.fillRect(13, 1, 1, 1);
+    contextPattern.fillRect(1, 4, 1, 1);
+    contextPattern.fillRect(4, 4, 1, 1);
+    contextPattern.fillRect(7, 4, 1, 1);
+    contextPattern.fillRect(10, 4, 1, 1);
+    contextPattern.fillRect(13, 4, 1, 1);
+    contextPattern.fillRect(1, 7, 1, 1);
+    contextPattern.fillRect(4, 7, 1, 1);
+    contextPattern.fillRect(7, 7, 1, 1);
+    contextPattern.fillRect(10, 7, 1, 1);
+    contextPattern.fillRect(13, 7, 1, 1);
+    contextPattern.fillRect(1, 10, 1, 1);
+    contextPattern.fillRect(4, 10, 1, 1);
+    contextPattern.fillRect(7, 10, 1, 1);
+    contextPattern.fillRect(10, 10, 1, 1);
+    contextPattern.fillRect(13, 10, 1, 1);
+    contextPattern.fillRect(1, 13, 1, 1);
+    contextPattern.fillRect(4, 13, 1, 1);
+    contextPattern.fillRect(7, 13, 1, 1);
+    contextPattern.fillRect(10, 13, 1, 1);
+    contextPattern.fillRect(13, 13, 1, 1);
+
+
+    return canvasPattern;
+}
+KiddoPaint.Textures.SprayPaint6 = function(color1) {
+    color1 = color1 || 'black';
+
+    var canvasPattern = document.createElement('canvas');
+    canvasPattern.width = 16;
+    canvasPattern.height = 16;
+    var contextPattern = canvasPattern.getContext('2d');
+
+    contextPattern.beginPath();
+    contextPattern.fillStyle = color1;
+    contextPattern.fillRect(7, 1, 1, 1);
+    contextPattern.fillRect(4, 4, 1, 1);
+    contextPattern.fillRect(10, 4, 1, 1);
+    contextPattern.fillRect(1, 7, 1, 1);
+    contextPattern.fillRect(7, 7, 1, 1);
+    contextPattern.fillRect(13, 7, 1, 1);
+    contextPattern.fillRect(4, 10, 1, 1);
+    contextPattern.fillRect(10, 10, 1, 1);
+    contextPattern.fillRect(7, 13, 1, 1);
+
+
+
+    return canvasPattern;
+}
+KiddoPaint.Textures.SprayPaint7 = function(color1) {
+    color1 = color1 || 'black';
+
+    var canvasPattern = document.createElement('canvas');
+    canvasPattern.width = 16;
+    canvasPattern.height = 16;
+    var contextPattern = canvasPattern.getContext('2d');
+
+    contextPattern.beginPath();
+    contextPattern.fillStyle = color1;
+    contextPattern.fillRect(7, 0, 1, 1);
+    contextPattern.fillRect(9, 0, 1, 1);
+    contextPattern.fillRect(5, 1, 1, 1);
+    contextPattern.fillRect(11, 1, 1, 1);
+    contextPattern.fillRect(2, 2, 1, 1);
+    contextPattern.fillRect(8, 2, 1, 1);
+    contextPattern.fillRect(10, 2, 1, 1);
+    contextPattern.fillRect(6, 3, 1, 1);
+    contextPattern.fillRect(12, 3, 1, 1);
+    contextPattern.fillRect(2, 4, 1, 1);
+    contextPattern.fillRect(4, 4, 1, 1);
+    contextPattern.fillRect(8, 4, 1, 1);
+    contextPattern.fillRect(10, 4, 1, 1);
+    contextPattern.fillRect(14, 4, 1, 1);
+    contextPattern.fillRect(0, 5, 1, 1);
+    contextPattern.fillRect(6, 5, 1, 1);
+    contextPattern.fillRect(12, 5, 1, 1);
+    contextPattern.fillRect(3, 6, 1, 1);
+    contextPattern.fillRect(9, 6, 1, 1);
+    contextPattern.fillRect(14, 6, 1, 1);
+    contextPattern.fillRect(2, 7, 1, 1);
+    contextPattern.fillRect(7, 7, 1, 1);
+    contextPattern.fillRect(11, 7, 1, 1);
+    contextPattern.fillRect(15, 7, 1, 1);
+    contextPattern.fillRect(5, 8, 1, 1);
+    contextPattern.fillRect(9, 8, 1, 1);
+    contextPattern.fillRect(13, 8, 1, 1);
+    contextPattern.fillRect(0, 9, 1, 1);
+    contextPattern.fillRect(3, 9, 1, 1);
+    contextPattern.fillRect(12, 9, 1, 1);
+    contextPattern.fillRect(2, 10, 1, 1);
+    contextPattern.fillRect(6, 10, 1, 1);
+    contextPattern.fillRect(8, 10, 1, 1);
+    contextPattern.fillRect(10, 10, 1, 1);
+    contextPattern.fillRect(14, 10, 1, 1);
+    contextPattern.fillRect(4, 11, 1, 1);
+    contextPattern.fillRect(12, 11, 1, 1);
+    contextPattern.fillRect(1, 12, 1, 1);
+    contextPattern.fillRect(5, 12, 1, 1);
+    contextPattern.fillRect(7, 12, 1, 1);
+    contextPattern.fillRect(10, 12, 1, 1);
+    contextPattern.fillRect(3, 13, 1, 1);
+    contextPattern.fillRect(13, 13, 1, 1);
+    contextPattern.fillRect(4, 14, 1, 1);
+    contextPattern.fillRect(6, 14, 1, 1);
+    contextPattern.fillRect(10, 14, 1, 1);
+    contextPattern.fillRect(8, 15, 1, 1);
+
+
+    return canvasPattern;
+}

@@ -67,6 +67,10 @@ function init_sprites_submenu() {
                 img.crossOrigin = 'anonymous';
                 img.onload = function() {
                     KiddoPaint.Tools.SpritePlacer.image = scaleImageDataCanvasAPIPixelated(extractSprite(img, 32, j, row, 0), 2);
+                    KiddoPaint.Tools.SpritePlacer.soundBefore = function() {
+                        KiddoPaint.Sounds.stamp();
+                    };
+                    KiddoPaint.Tools.SpritePlacer.soundDuring = function() {};
                     KiddoPaint.Current.tool = KiddoPaint.Tools.SpritePlacer;
                 };
             }

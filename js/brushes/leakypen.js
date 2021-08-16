@@ -7,7 +7,7 @@ KiddoPaint.Brushes.LeakyPen = function() {
         color1 = color1 || 'black';
         if (distPrev < 2) {
             if (prevSize < maxSize) {
-                prevSize += 0.095;
+                prevSize += 0.15;
             }
         } else {
             prevSize = baseSize;

@@ -4,7 +4,7 @@ KiddoPaint.Tools.Toolbox.Eraser = function() {
     this.size = 10;
     this.isSquareEraser = true;
     this.texture = function() {
-        return KiddoPaint.Textures.Solid('rgb(255, 2, 0)');
+        return KiddoPaint.Textures.Solid('rgb(240, 180, 180)');
     };
 
     this.mousedown = function(ev) {

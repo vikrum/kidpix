@@ -7,7 +7,8 @@ KiddoPaint.Tools.Toolbox.PlainBrush = function() {
     this.postprocess = function() {};
     this.soundduring = function() {};
     this.spacing = 5;
-    this.step = 0;
+    this.step = 0; // local tool step which resets on mouse up
+    this.pstep = 0; // local persistent step which resets when invoker chooses; used in connect the dots
     this.alwaysGapFill = false;
 
     this.reset = function() {
@@ -18,6 +19,7 @@ KiddoPaint.Tools.Toolbox.PlainBrush = function() {
         tool.postprocess = function() {};
         tool.soundduring = function() {};
         tool.step = 0;
+        tool.pstep = 0;
         tool.alwaysGapFill = false;
     }
 
@@ -43,9 +45,10 @@ KiddoPaint.Tools.Toolbox.PlainBrush = function() {
                     for (var i = 0; i < dist; i += 5) {
                         var x = tool.previousEv._x + (Math.sin(angle) * i);
                         var y = tool.previousEv._y + (Math.cos(angle) * i);
-                        var brushFill = tool.texture(tool.step);
+                        var brushFill = tool.texture(tool.step, tool.pstep);
                         KiddoPaint.Display.context.drawImage(brushFill.brush, Math.round(x - brushFill.offset), Math.round(y - brushFill.offset));
                         tool.step += 1;
+                        tool.pstep += 1;
                         if (KiddoPaint.Current.modifiedTilde) {
                             // alpha decay
                             KiddoPaint.Display.context.globalAlpha *= 0.99;
@@ -53,15 +56,13 @@ KiddoPaint.Tools.Toolbox.PlainBrush = function() {
                         }
                     }
                 }
-                var brushFill = tool.texture(tool.step);
+                var brushFill = tool.texture(tool.step, tool.pstep);
                 tool.soundduring();
                 KiddoPaint.Display.context.drawImage(brushFill.brush, Math.round(ev._x - brushFill.offset), Math.round(ev._y - brushFill.offset));
                 tool.previousEv = ev;
                 tool.step += 1;
+                tool.pstep += 1;
             }
-        } else {
-            var brushFill = tool.texture(0);
-            KiddoPaint.Display.previewContext.drawImage(brushFill.brush, Math.round(ev._x - brushFill.offset), Math.round(ev._y - brushFill.offset));
         }
     };
 
@@ -70,7 +71,7 @@ KiddoPaint.Tools.Toolbox.PlainBrush = function() {
             tool.mousemove(ev);
             tool.isDown = false;
             tool.previousEv = null;
-            tool.step = 0;
+            tool.step = 0; // only reset local step, not pstep. caller invokes reset() if need be
             tool.postprocess();
             KiddoPaint.Display.saveMain();
             KiddoPaint.Display.context.globalAlpha = KiddoPaint.Current.globalAlpha;

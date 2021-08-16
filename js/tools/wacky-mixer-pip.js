@@ -4,12 +4,14 @@ KiddoPaint.Tools.Toolbox.ElectricMixerPip = function() {
 
     this.mousedown = function(ev) {
         tool.isDown = true;
+        KiddoPaint.Sounds.mixerpip();
     };
 
     this.mousemove = function(ev) {};
 
     this.mouseup = function(ev) {
         if (tool.isDown) {
+            KiddoPaint.Sounds.mixershadowbox();
             tool.isDown = false;
             var target = KiddoPaint.Display.main_context.getImageData(0, 0, KiddoPaint.Display.canvas.width, KiddoPaint.Display.canvas.height);
             KiddoPaint.Tools.Placer.image = KiddoPaint.Display.imageTypeToCanvas(scaleImageData(target, 1.0 / 5.0), false);

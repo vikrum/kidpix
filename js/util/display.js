@@ -143,7 +143,7 @@ KiddoPaint.Display.loadFromLocalStorage = function() {
     if (typeof(Storage) != "undefined" && localStorage.getItem("kiddopaint")) {
         img.src = localStorage.getItem("kiddopaint");
     } else {
-        img.src = "static/jskidpix.png";
+        img.src = "static/splash.png";
     }
 }
 

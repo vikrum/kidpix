@@ -36,6 +36,8 @@ KiddoPaint.Tools.Toolbox.WackyMixerShadowBoxes = function() {
 
     this.toolDraw = function() {
         if (tool.isDown) {
+            KiddoPaint.Sounds.mixershadowbox();
+
             let minSize = 0.05 * KiddoPaint.Display.canvas.width;
             let maxSize = 0.20 * KiddoPaint.Display.canvas.width;
 
@@ -56,6 +58,7 @@ KiddoPaint.Tools.Toolbox.WackyMixerShadowBoxes = function() {
             KiddoPaint.Display.context.shadowOffsetX = 2;
             KiddoPaint.Display.context.shadowOffsetY = 2;
 
+            KiddoPaint.Display.context.strokeStyle = KiddoPaint.Current.color;
             KiddoPaint.Display.context.strokeRect(rdx, rdy, rwidth, rheight);
             KiddoPaint.Display.context.putImageData(sourceImage, rdx, rdy);
         }

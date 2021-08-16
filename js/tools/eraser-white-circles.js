@@ -14,6 +14,7 @@ KiddoPaint.Tools.Toolbox.EraserWhiteCircles = function() {
 
     this.mousemove = function(ev) {
         if (tool.isDown) {
+            KiddoPaint.Sounds.bubblepops();
             let currentSize = tool.size * KiddoPaint.Current.scaling;
             var ctx = KiddoPaint.Display.context
             ctx.fillStyle = 'white';

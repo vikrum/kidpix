@@ -365,7 +365,7 @@ function bresenham(x1, y1, x2, y2, callback) {
     var dy = y2 - y1;
     var sy = 1;
     var space = 0;
-    var spacing = 0;
+    var spacing = 3;
 
     if (dx < 0) {
         sx = -1;
@@ -441,6 +441,11 @@ function color2json(color) {
 
 function colorsEqual(color1, color2) {
     return color1.r === color2.r && color1.g === color2.g && color1.b === color2.b && color1.a === color2.a;
+}
+
+function colorNearWhite(color) {
+    let basegrey = 221;
+    return color.r > basegrey && color.g > basegrey && color.b > basegrey && color.a > 235;
 }
 
 function clamp(value, min, max) {
@@ -549,4 +554,21 @@ function makePatternFromImage(image) {
     contextPattern.drawImage(image, xOffset, yOffset, image.width * 2, image.height * 2);
 
     return contextPattern.createPattern(canvasPattern, 'no-repeat');
+}
+
+function getOffset(obj) {
+    var offsetLeft = 0;
+    var offsetTop = 0;
+    do {
+        if (!isNaN(obj.offsetLeft)) {
+            offsetLeft += obj.offsetLeft;
+        }
+        if (!isNaN(obj.offsetTop)) {
+            offsetTop += obj.offsetTop;
+        }
+    } while (obj = obj.offsetParent);
+    return {
+        left: offsetLeft,
+        top: offsetTop
+    };
 }

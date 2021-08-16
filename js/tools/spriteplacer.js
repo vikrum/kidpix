@@ -4,11 +4,13 @@ KiddoPaint.Tools.Toolbox.SpritePlacer = function() {
     this.image = {};
     this.prevTool = {};
     this.size = {};
+    this.soundBefore = function() {};
+    this.soundDuring = function() {};
 
     this.mousedown = function(ev) {
         tool.isDown = true;
         tool.mousemove(ev);
-        KiddoPaint.Sounds.stamp();
+        tool.soundBefore();
     };
 
     this.mousemove = function(ev) {
@@ -47,6 +49,10 @@ KiddoPaint.Tools.Toolbox.SpritePlacer = function() {
             ctx.drawImage(img, -width / 2, -height / 2);
 
             ctx.restore();
+        }
+
+        if (tool.isDown) {
+            tool.soundDuring();
         }
 
         drawImageff(tool.image, ev._x, ev._y, tool.size.width, tool.size.height, KiddoPaint.Current.modifiedAlt, KiddoPaint.Current.modifiedMeta, true);
