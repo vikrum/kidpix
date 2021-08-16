@@ -1,16 +1,19 @@
 # jskidpix ✨ https://kidpix.app/
 JS Kid Pix / Kid Pix 1.0 was released in to the public domain and this is an HTML/JS reimplementation.
 
-![jskidpix](https://user-images.githubusercontent.com/291215/128231176-01aa7d27-db82-4b76-8d53-fb987e1fea57.png)
+![ghsplash](https://user-images.githubusercontent.com/291215/129511916-b22bb209-4967-4a4c-9077-22e762950a1b.jpg)
 
 ### Guide
 Just like the original Kid Pix, there's no guide—have fun!  Most of the tools support Shift (^) to enlarge. There are a handful of hidden tool features behind various modifier keys (⌘, ⌥, ⇧). The modifier keys can also be combined. Enjoy! :) 
 
-### TODO
-* If anyone has any idea what the original Kid Pix "3-d" brush is doing with the dithering, drop me a note. I couldn't intuit it :(
+### Mirrors
 
-![Screen Shot 2021-08-04 at 11 39 33 AM](https://user-images.githubusercontent.com/291215/128236489-32a56b21-17e9-4b4a-b631-a987472127c4.png)
+Please let me know if you mirror the site elsewhere and I'll add it here:
+- https://kidpix.app/
+- https://kidpix.neocities.org/
+- https://kidpix.web.app/
+- https://5f5.org/kidpix/
 
-* A few animations and sounds still need to be filled in.
-* Safari/iOS sounds need pre-loading.
-* Move color selector elsewhere if screen is too small.
+### Questions or Bugs?
+
+Leave a note: https://github.com/vikrum/kidpix/issues
