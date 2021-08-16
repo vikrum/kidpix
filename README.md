@@ -13,6 +13,7 @@ Please let me know if you mirror the site elsewhere and I'll add it here:
 - https://kidpix.neocities.org/
 - https://kidpix.web.app/
 - https://vikrum.github.io/kidpix/
+- https://kidpix.glitch.me/
 
 ### Questions or Bugs?
 
