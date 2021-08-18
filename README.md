@@ -1,5 +1,5 @@
 # jskidpix ✨ https://kidpix.app/
-JS Kid Pix / Kid Pix 1.0 was released in to the public domain and this is an HTML/JS reimplementation.
+In 1989 Kid Pix 1.0 was released into the public domain and this is an HTML/JS reimplementation.
 
 ![ghsplash](https://user-images.githubusercontent.com/291215/129511916-b22bb209-4967-4a4c-9077-22e762950a1b.jpg)
 
