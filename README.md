@@ -15,6 +15,7 @@ Please let me know if you mirror the site elsewhere and I'll add it here:
 - https://vikrum.github.io/kidpix/
 - https://kidpix.glitch.me/
 
-### Questions or Bugs?
+### Questions & Hints
 
-Leave a note: https://github.com/vikrum/kidpix/issues
+- Leave a note if you have a question or find a bug: https://github.com/vikrum/kidpix/issues
+- Check out the hints wiki to get the grownup info: https://github.com/vikrum/kidpix/wiki
