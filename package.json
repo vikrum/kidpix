@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/vikrum/kidpix#readme",
   "dependencies": {
-    "js-beautify": "^1.14.2",
+    "js-beautify": "^1.14.4",
     "uglify-es": "^3.3.10"
   }
 }
