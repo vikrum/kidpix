@@ -23,3 +23,7 @@ https://github.com/vikrum/kidpix/wiki/Gallery-of-Masterpieces
 
 - Leave a note if you have a question or find a bug: https://github.com/vikrum/kidpix/issues
 - Check out the hints wiki to get the grownup info: https://github.com/vikrum/kidpix/wiki
+
+### Fun Links
+- 🎨 [Let's Get Creative](https://www.bryanbraun.com/lets-get-creative/)
+- 💅 [NailStudio](https://notcrying.club/nailstudio/)
