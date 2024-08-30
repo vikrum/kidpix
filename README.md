@@ -28,3 +28,4 @@ https://github.com/vikrum/kidpix/wiki/Gallery-of-Masterpieces
 - 🎨 [Let's Get Creative](https://www.bryanbraun.com/lets-get-creative/)
 - 💅 [NailStudio](https://notcrying.club/nailstudio/)
 - 🖨️ [The Print Shop](https://theprintshop.club/)
+- 🤖 [Okay Artist](https://tekgo.github.io/OkayArtist/)
