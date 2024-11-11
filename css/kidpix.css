@@ -19,6 +19,11 @@ body {
     width: 100%;
 }
 
+#toolbar,
+#subtoolbars {
+    touch-action: none;
+}
+
 #hcontainer {
     /*
   border: solid;
