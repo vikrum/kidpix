@@ -36,11 +36,13 @@ function show_generic_submenu(subtoolbar) {
             var img = document.createElement('img');
             img.src = buttonDetail.imgSrc;
             img.className = 'toolImg pixelated';
+            img.setAttribute('draggable', 'false');
             button.appendChild(img);
         } else if (buttonDetail.imgJs) {
             var img = document.createElement('img');
             img.src = buttonDetail.imgJs();
             img.className = 'pixelated';
+            img.setAttribute('draggable', 'false');
             button.appendChild(img);
         } else if (buttonDetail.text) {
             var t = document.createTextNode(buttonDetail.text);
@@ -54,6 +56,7 @@ function show_generic_submenu(subtoolbar) {
             var img = document.createElement('img');
             img.src = buttonDetail.spriteSheet;
             img.className = 'tool sprite sprite-pos-' + buttonDetail.spriteCol + '-' + buttonDetail.spriteRow;
+            img.setAttribute('draggable', 'false');
             button.appendChild(img);
         } else {
             //		console.log(buttonDetail);
