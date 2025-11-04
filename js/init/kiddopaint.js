@@ -533,10 +533,24 @@ function init_tool_bar() {
     if (KiddoPaint.Current.modifiedCtrl) {
       show_generic_submenu("stickers");
     } else {
-      init_sprites_submenu(); // automatically does for current page
-      show_generic_submenu("sprites");
-      KiddoPaint.Tools.Stamp.useColor = false;
-      KiddoPaint.Submenu.sprites[0].handler();
+      // Load stamp names data if not already loaded
+      if (!KiddoPaint.Sprite.stampNames) {
+        KiddoPaint.Sprite.loadStampNames().then(function () {
+          init_sprites_submenu();
+          show_sprites_with_search();
+          KiddoPaint.Tools.Stamp.useColor = false;
+          if (KiddoPaint.Submenu.sprites[0]) {
+            KiddoPaint.Submenu.sprites[0].handler();
+          }
+        });
+      } else {
+        init_sprites_submenu();
+        show_sprites_with_search();
+        KiddoPaint.Tools.Stamp.useColor = false;
+        if (KiddoPaint.Submenu.sprites[0]) {
+          KiddoPaint.Submenu.sprites[0].handler();
+        }
+      }
     }
   });
 
