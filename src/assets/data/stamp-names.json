@@ -1,0 +1,83 @@
+{
+  "stamps": [
+    {
+      "sheet": 0,
+      "row": 0,
+      "col": 0,
+      "name": "house",
+      "tags": ["building", "home"]
+    },
+    {
+      "sheet": 0,
+      "row": 0,
+      "col": 1,
+      "name": "tree",
+      "tags": ["nature", "plant"]
+    },
+    {
+      "sheet": 0,
+      "row": 0,
+      "col": 2,
+      "name": "car",
+      "tags": ["vehicle", "transportation"]
+    },
+    {
+      "sheet": 0,
+      "row": 0,
+      "col": 3,
+      "name": "sun",
+      "tags": ["nature", "sky", "weather"]
+    },
+    {
+      "sheet": 0,
+      "row": 0,
+      "col": 4,
+      "name": "moon",
+      "tags": ["nature", "sky", "night"]
+    },
+    {
+      "sheet": 0,
+      "row": 1,
+      "col": 0,
+      "name": "dog",
+      "tags": ["animal", "pet"]
+    },
+    {
+      "sheet": 0,
+      "row": 1,
+      "col": 1,
+      "name": "cat",
+      "tags": ["animal", "pet"]
+    },
+    {
+      "sheet": 0,
+      "row": 1,
+      "col": 2,
+      "name": "bird",
+      "tags": ["animal", "nature"]
+    },
+    {
+      "sheet": 1,
+      "row": 0,
+      "col": 0,
+      "name": "apple",
+      "tags": ["food", "fruit"]
+    },
+    {
+      "sheet": 1,
+      "row": 0,
+      "col": 1,
+      "name": "banana",
+      "tags": ["food", "fruit"]
+    }
+  ],
+  "metadata": {
+    "totalSheets": 10,
+    "rowsPerSheet": 8,
+    "colsPerRow": 15,
+    "totalStamps": 1200,
+    "namedStamps": 10,
+    "version": "0.1.0",
+    "notes": "This file maps stamp positions (sheet, row, col) to human-readable names and tags. Most stamps are unnamed and will need manual naming."
+  }
+}
